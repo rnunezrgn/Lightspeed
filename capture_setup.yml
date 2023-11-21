@@ -13,3 +13,14 @@
     - name: Show metadata varibble using debug module
       ansible.builtin.debug:
         var: metadata
+
+    - name: Collect only ansible ansible_eth0 and ansible_*_mb facts with setup
+      ansible.builtin.setup:
+        gather_subset:
+          - ansible_*_mb
+          - ansible_eth0
+      register: myfacts
+
+    - name: Show myfacts variable using debug module
+      ansible.builtin.debug:
+        var: myfacts
