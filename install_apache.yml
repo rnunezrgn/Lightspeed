@@ -5,7 +5,7 @@
 
   tasks:
 
-    - name: Install Apache with dnf
+    - name: Install Apache with package
       ansible.builtin.package:
         name: httpd
         state: present
@@ -16,11 +16,11 @@
         enabled: true
         state: started
     
-    - name: Copy index.html from source file web.html to /var/www/html/index.html
+    - name: Copy index.html from source files/web.html to /var/www/html/index.html
       ansible.builtin.copy:
         src: files/web.html
         dest: /var/www/html/index.html
-        owner: apache
-        group: apache
-        mode: '0644'
-
+        owner: root
+        group: root
+        mode: 420
+    

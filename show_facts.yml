@@ -1,0 +1,8 @@
+---
+- name: Output facts within a playbook
+  hosts: all
+
+  tasks:
+    - name: Print Ansible Facts in a message like "The default IP address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}
+      ansible.builtin.debug:
+        msg: "The default IP address of {{ ansible_fqdn }} is {{ ansible_default_ipv4.address }}"
