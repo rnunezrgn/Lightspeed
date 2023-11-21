@@ -1,0 +1,26 @@
+---
+- name: Apache server installed
+  hosts: node1
+  become: yes
+
+  tasks:
+
+    - name: Install Apache with dnf
+      ansible.builtin.package:
+        name: httpd
+        state: present
+
+    - name: Apache enabled and running
+      ansible.builtin.service:
+        name: httpd
+        enabled: true
+        state: started
+    
+    - name: Copy index.html from source file web.html to /var/www/html/index.html
+      ansible.builtin.copy:
+        src: web.html
+        dest: /var/www/html/index.html
+        owner: apache
+        group: apache
+        mode: '0644'
+    
