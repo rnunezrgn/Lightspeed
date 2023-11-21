@@ -21,9 +21,10 @@
     
     - name: Copy index.html from source files/web.html to /var/www/html/index.html
       ansible.builtin.copy:
-        src: "files/web/html"
+        src: "files/web.html"
         dest: /var/www/html/
         owner: apache
         group: apache
         mode: 420
+    
     
