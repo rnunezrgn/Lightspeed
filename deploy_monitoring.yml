@@ -1,6 +1,6 @@
 ---
 - name: Deploy monitoring
-  hosts: monitoring
+  hosts: all
   become: true
 
   # module_defaults:
