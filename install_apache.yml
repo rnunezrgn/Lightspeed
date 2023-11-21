@@ -5,22 +5,9 @@
 
   tasks:
 
-    - name: Install Apache with package
-      ansible.builtin.package:
-        name: httpd
-        state: present
+    #- name: Install Apache with package
 
-    - name: Apache enabled and running
-      ansible.builtin.service:
-        name: httpd
-        enabled: true
-        state: started
+    #- name: Apache enabled and running
     
-    - name: Copy index.html from source files/web.html to /var/www/html/index.html
-      ansible.builtin.copy:
-        src: files/web.html
-        dest: /var/www/html/index.html
-        owner: root
-        group: root
-        mode: 420
+    #- name: Copy index.html from source files/web.html to /var/www/html/index.html
     

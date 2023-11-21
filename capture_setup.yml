@@ -4,23 +4,10 @@
 
   tasks:
 
-    - name: Collect all facts and register in setup variable
-      ansible.builtin.setup:
-        gather_subset:
-          - 'all'
-      register: metadata
+    #- name: Collect all facts and register in setup variable
 
-    - name: Show metadata variable using debug module
-      ansible.builtin.debug:
-        var: metadata
+    #- name: Show metadata variable using debug module
 
-    - name: gather_subset ansible ansible_eth0 and ansible_*_mb facts with setup and register myfacts variable
-      ansible.builtin.setup:
-        gather_subset:
-          - 'ansible_eth0'
-          - 'ansible_*_mb'
-      register: myfacts
+    #- name: gather_subset ansible ansible_eth0 and ansible_*_mb facts with setup and register myfacts variable
     
-    - name: Show myfacts variable using debug module
-      ansible.builtin.debug:
-        var: myfacts
+    #- name: Show myfacts variable using debug module
