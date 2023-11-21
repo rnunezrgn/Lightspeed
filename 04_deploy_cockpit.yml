@@ -1,0 +1,8 @@
+---
+- name: Deploy monitoring
+  hosts: node1
+  become: true
+
+  tasks:
+    #- name: Include redhat.rhel_system_roles.cockpit
+    
