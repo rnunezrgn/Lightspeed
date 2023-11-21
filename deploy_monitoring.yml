@@ -19,4 +19,16 @@
         owner: root
         group: root
         mode: '0644'
+
+    - name: Restart cockpit service
+      ansible.builtin.service:
+        name: cockpit
+        state: restarted
+    
+    - name: Allow cockpit througth ansible.posix.firewalld
+      ansible.posix.firewalld:
+        service: cockpit
+        permanent: true
+        state: enabled
+        immediate: true
     
